@@ -55,7 +55,7 @@ setup(
         "setuptools==75.3.0",
         "sniffio==1.3.1",
         "SQLAlchemy==2.0.36",
-        "tenacity==9.0.0",
+        "tenacity==8.5.0",
         "threadpoolctl==3.5.0",
         "tiktoken==0.8.0",
         "tqdm==4.66.6",
