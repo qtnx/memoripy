@@ -40,7 +40,7 @@ setup(
         "networkx==3.4.2",
         "numpy==1.26.4",
         "ollama==0.3.3",
-        "openai==1.53.0",
+        "openai==1.54.0",
         "orjson==3.10.11",
         "packaging==24.1",
         "propcache==0.2.0",
