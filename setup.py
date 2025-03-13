@@ -44,7 +44,7 @@ setup(
         "orjson==3.10.11",
         "packaging==24.1",
         "propcache==0.2.0",
-        "pydantic=^2.9.2",
+        "pydantic>=2.9.2",
         "pydantic_core=^2.23.4",
         "PyYAML==6.0.2",
         "regex==2024.9.11",
