@@ -1,6 +1,6 @@
 # Memoripy
 
-**Memoripy** is a Python library designed to manage and retrieve context-aware memory interactions using both short-term and long-term storage. It supports AI-driven applications requiring memory management, with compatibility for OpenAI and Ollama APIs. Features include contextual memory retrieval, memory decay and reinforcement, hierarchical clustering, and graph-based associations.
+**Memoripy** is a Python library designed to manage and retrieve context-aware memory interactions using both short-term and long-term storage. It supports AI-driven applications requiring memory management, with compatibility for OpenAI, Azure OpenAI, OpenRouter and Ollama APIs. Features include contextual memory retrieval, memory decay and reinforcement, hierarchical clustering, and graph-based associations.
 
 ## Features
 
@@ -30,8 +30,9 @@ The following example demonstrates how to set up and use Memoripy in a Python sc
 ### Example: `example.py`
 This example script shows the primary functionality of Memoripy, including initialization, storing interactions, retrieving relevant memories, and generating responses.
 
-```bash
+```
 from memoripy import MemoryManager, JSONStorage
+from memoripy.implemented_models import OpenAIChatModel, OllamaEmbeddingModel
 
 def main():
     # Replace 'your-api-key' with your actual OpenAI API key
@@ -40,9 +41,7 @@ def main():
         raise ValueError("Please set your OpenAI API key.")
 
     # Define chat and embedding models
-    chat_model = "openai"           # Choose 'openai' or 'ollama' for chat
-    chat_model_name = "gpt-4o-mini" # Specific chat model name
-    embedding_model = "ollama"      # Choose 'openai' or 'ollama' for embeddings
+    chat_model_name = "gpt-4o-mini"  # Specific chat model name
     embedding_model_name = "mxbai-embed-large"  # Specific embedding model name
 
     # Choose your storage option
@@ -53,11 +52,8 @@ def main():
 
     # Initialize the MemoryManager with the selected models and storage
     memory_manager = MemoryManager(
-        api_key=api_key,
-        chat_model=chat_model,
-        chat_model_name=chat_model_name,
-        embedding_model=embedding_model,
-        embedding_model_name=embedding_model_name,
+        OpenAIChatModel(api_key, chat_model_name),
+        OllamaEmbeddingModel(embedding_model_name),
         storage=storage_option
     )
 
@@ -87,6 +83,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 ```
 ## Classes and Modules
 - `MemoryManager`: Manages memory interactions, retrieves relevant information, and generates responses based on past interactions.
@@ -132,3 +129,8 @@ Memoripy is licensed under the Apache 2.0 License.
 
 ## Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests for improvements.
+
+## Contributors
+<a href="https://github.com/caspianmoon"><img src="https://avatars.githubusercontent.com/u/128258622?v=4" width="60px" style="border-radius: 50%;" /></a><a href="https://github.com/FrancescoCaracciolo"><img src="https://avatars.githubusercontent.com/u/67018178?v=4" width="60px" style="border-radius: 50%;" /></a><a href="https://github.com/sjwang05"><img src="https://avatars.githubusercontent.com/u/63834813?v=4" width="60px" style="border-radius: 50%;" /></a><a href="https://github.com/virtualramblas"><img src="https://avatars.githubusercontent.com/u/1730182?v=4" width="60px" style="border-radius: 50%;" /></a><a href="https://github.com/robonxt-ai"><img src="https://avatars.githubusercontent.com/u/56778225?v=4" width="60px" style="border-radius: 50%;" /></a><a href="https://github.com/shiro-sata"><img src="https://avatars.githubusercontent.com/u/125814898?v=4" width="60px" style="border-radius: 50%;" /></a>
+
+
